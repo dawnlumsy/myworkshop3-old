@@ -2,24 +2,25 @@
 <br>
 <form #rsvpform="ngForm" (ngSubmit)="processForm(rsvpform)">
         <label for="name">Name</label><br>
-        <input type="text" id="name" name="name" ngModel > <br>
+        <input type="text" id="name" name="name" ngModel required> <br>
         <label for="guest">Guest</label><br>
         <input type="number" step="1" min="0" max="3" id="guestNum" name="guest" ngModel> <br>
         <label for="phone">Phone Number</label><br>
-        <input type="text" id="phone" name="phone" ngModel> <br>
-        
-        <label for="date">Select day</label><br>
-        <input type="date" name="selDate" ngModel><br>
-        <br>
-        <label for="attending">Which events will you be attending?</label><br>
-        
-        <input type='radio' id='attend' name='attending' value="Yes" ngModel>Yes <br>
-        <input type='radio' id='attend' name='notattending' value="No" ngModel>No <br>
-        <br>
-        <label for="foodAllergies">Food Allergies</label><br>
+        <input type="text" id="phone" name="phone" ngModel required> <br>
 
-        <input type="checkbox" id='foodAllergies' name='seafoodAllergies' value="seafood" ngModel>Seafood
-        <input type="checkbox" id='foodAllergies' name='nutAllergies'value="nut" ngModel>Nut   
+        <label for="attendingDay">Attending:</label>
+        <input type="date" name="attendingDay" id="attendingDay" ngModel required>
+        <br>
+
+        <br>
+        <label for="vegetarian">Vegetarian: </label>        
+        <input type='radio' id='vegetarian' name='yesVeg' value="yes" ngModel required>Yes
+        <input type='radio' id='vegetarian' name='noVeg' value="no" ngModel required>No        
+        <br>
+        <label for="foodAllergies">Food Allergies: </label><br>
+        <br>
+        <input type="checkbox" id='foodAllergies' name='allergies-seafood' value="seafood" ngModel>Seafood
+        <input type="checkbox" id='foodAllergies' name='allergies-nut'value="nut" ngModel>Nut   
         <br>
         <br>
         <label for="comments">Comments or Questions:</label><br>
