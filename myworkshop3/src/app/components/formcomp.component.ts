@@ -34,8 +34,20 @@ export class FormcompComponent implements OnInit {
  
       form.resetForm();
       this.onNewRSVP.next(rsvp);
-
+      this.rsvpdetails.push(rsvp)
   }
+
   
-  rsvpdetails: RSVP[] = [];
+  rsvpdetails: RSVP[] = [{
+
+    name: "dawn",
+    phone: "123",
+    attendingDay: 1570636800000,
+    vegetarian: false,
+    comments: "",
+    guest: 1,
+    allergies: ["allergies-nut"]
+  }];
+
+
 }
