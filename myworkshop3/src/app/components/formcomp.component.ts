@@ -37,5 +37,5 @@ export class FormcompComponent implements OnInit {
 
   }
   
-
+  rsvpdetails: RSVP[] = [];
 }

@@ -1,5 +1,6 @@
 import { Component ,} from '@angular/core';
-import { RSVP } from './models'
+import { RSVP } from './models';
+
 
 @Component({
   selector: 'app-root',
