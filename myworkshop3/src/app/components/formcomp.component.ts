@@ -22,6 +22,7 @@ export class FormcompComponent implements OnInit {
     const rsvp: RSVP = {
       name: values.name,
       phone: values.phone,
+      email: values.email,
       attendingDay: (new Date(values.attendingDay)).getTime(),
       vegetarian: values.vegetarian == "yes",
       comments: values.comments,
@@ -42,6 +43,7 @@ export class FormcompComponent implements OnInit {
 
     name: "dawn",
     phone: "123",
+    email: "abc@servername",
     attendingDay: 1570636800000,
     vegetarian: false,
     comments: "",
