@@ -38,7 +38,7 @@ export class FormcompComponent implements OnInit {
       this.rsvpdetails.push(rsvp)
   }
 
-  
+/*
   rsvpdetails: RSVP[] = [{
 
     name: "dawn",
@@ -50,6 +50,6 @@ export class FormcompComponent implements OnInit {
     guest: 1,
     allergies: ["allergies-nut"]
   }];
-
+*/
 
 }
