@@ -35,7 +35,7 @@ export class FormcompComponent implements OnInit {
  
       form.resetForm();
       this.onNewRSVP.next(rsvp);
-      this.rsvpdetails.push(rsvp)
+      //this.rsvpdetails.push(rsvp)
   }
 
 /*
