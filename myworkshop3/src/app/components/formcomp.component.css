@@ -1,9 +1,7 @@
-.mylogo {
-    width: auto;
-    height: 8vh;
-    border-radius: 100px;
-  }
-
 form {
     padding: 3vw;
+}
+
+.labelClass {
+  font-size: 0.8em;
 }

@@ -1,19 +1,4 @@
-<mat-toolbar color="primary" fxLayout="row column" fxLayoutAlign="space-between center">
-    <div fxlayout="row" fxLayoutAlign="start center" fxLayoutGap="1vw">
-            <img src="/assets/Ames_High_School_Logo.png" alt="" class="mylogo">
-            <h1>High School Reunion Registration Form</h1>
-    </div>
-    <div>
-        <button mat-icon-button>
-            <mat-icon>favorite</mat-icon>
-        </button>
-    </div>
-</mat-toolbar>
-
-
-<br>
 <form #rsvpform="ngForm" (ngSubmit)="processForm(rsvpform)" fxLayout="column row" fxLayoutGap="3wh">
-
     <mat-form-field class="inputclass">
         <input matInput type="text" id="name" name="name" 
             placeholder="Please enter your name"
@@ -25,12 +10,6 @@
             <mat-error *ngIf="nameField.hasError('maxlength')">
                     Please enter name with maxlength 16
             </mat-error>            
-    </mat-form-field>
-
-    <mat-form-field class="inputclass">
-        <input matInput type="number" step="1" min="0" max="3" id="guestNum" name="guest" 
-            ngModel
-            placeholder="Number of Guests">
     </mat-form-field>
 
     <mat-form-field class="inputclass">
@@ -62,23 +41,35 @@
             ngModel required
             placeholder="Choose a date of attending" >
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
+        <mat-datepicker #picker touchUi="true"></mat-datepicker>
 
     </mat-form-field>
 
-    
-    <label for="vegetarian">Vegetarian: </label>
-    <mat-radio-group fxLayout="row column" fxLayoutAlign="start center" fxLayoutGap="3vw"
-     aria-label="Select an option">
-            <mat-radio-button value="yes">Yes</mat-radio-button>
-            <mat-radio-button value="no">No</mat-radio-button> 
-    </mat-radio-group>     
-    <br>
-    <label for="foodAllergies">Food Allergies:</label>
-    <section fxLayout="row column" fxLayoutAlign = "start center" fxLayoutGap="3vw" class="allergiesClass">
+    <section fxLayout fxLayoutGap="1vw" fxLayoutAlign="start center" class="labelClass">
+        <mat-label>No of Extra Guest:</mat-label>
+        <mat-slider class="sliderclass"
+        matInput type="number" min="0" max="3" step="1" thumbLabel tickInterval="1"
+        id="guestNum" name="guest" 
+            ngModel
+            placeholder="Number of Guests">
+        </mat-slider>
+    </section>
+
+    <section fxLayout fxLayoutGap="1vw" fxLayoutAlign="start center" class="labelClass">
+        <mat-label>Vegetarian:</mat-label>
+        <mat-radio-group name="vegetarian" fxLayout="column" fxLayoutGap="1vh"
+        aria-label="Select an option">
+                <mat-radio-button value="yes">Yes</mat-radio-button>
+                <mat-radio-button value="no">No</mat-radio-button> 
+        </mat-radio-group>     
+    </section>
+
+    <section fxLayout="column row" fxLayoutAlign="start" fxLayoutGap="1vw" class="labelClass">
+        <mat-label>Food Allergies:</mat-label>
         <mat-checkbox name="allergies-seafood" ngModel>Seafood</mat-checkbox>
         <mat-checkbox name="allergies-nut" ngModel>Nut</mat-checkbox>
-        <mat-checkbox name="allergies-dairy" ngModel>Dairy</mat-checkbox>          
+        <mat-checkbox name="allergies-dairy" ngModel>Dairy</mat-checkbox>
+        <mat-checkbox name="allergies-glutten" ngModel>Glutten</mat-checkbox>        
     </section>
 
     <br>
